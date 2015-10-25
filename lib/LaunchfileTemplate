@@ -1,0 +1,5 @@
+Launch::Launcher.new do |l|
+  l.name = PROJECT_NAME
+# l.pattern = "pattern_to_replace"
+# l.replacement = "pattern_replacement"
+end

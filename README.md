@@ -1,5 +1,7 @@
-[![Master Build Status](https://travis-ci.org/eliasbagley/launch.svg?branch=master)](https://travis-ci.org/eliasbagley/launch)# Launch
-[![Dev Build Status](https://travis-ci.org/eliasbagley/launch.svg?branch=dev)](https://travis-ci.org/eliasbagley/launch)
+Master [![Master Build Status](https://travis-ci.org/eliasbagley/launch.svg?branch=master)](https://travis-ci.org/eliasbagley/launch)<br>
+Dev [![Dev Build Status](https://travis-ci.org/eliasbagley/launch.svg?branch=dev)](https://travis-ci.org/eliasbagley/launch)<br>
+
+#Launch
 
 Launch is a gem for starting new Android projects based off of a template repository
 

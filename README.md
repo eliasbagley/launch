@@ -1,5 +1,3 @@
-\U+1F680
-
 # Launch
 
 Launch is a gem for starting new Android projects based off of a template repository

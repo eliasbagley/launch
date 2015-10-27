@@ -1,5 +1,5 @@
-Master [![Master Build Status](https://travis-ci.org/eliasbagley/launch.svg?branch=master)](https://travis-ci.org/eliasbagley/launch)<br>
-Dev [![Dev Build Status](https://travis-ci.org/eliasbagley/launch.svg?branch=dev)](https://travis-ci.org/eliasbagley/launch)<br>
+[![Master Build Status](https://travis-ci.org/eliasbagley/launch.svg?branch=master)](https://travis-ci.org/eliasbagley/launch) Master <br>
+[![Dev Build Status](https://travis-ci.org/eliasbagley/launch.svg?branch=dev)](https://travis-ci.org/eliasbagley/launch) Dev <br>
 
 #Launch
 

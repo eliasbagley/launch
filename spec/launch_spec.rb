@@ -8,10 +8,6 @@ describe Launch do
     expect(Launch::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(true).to eq(true)
-  end
-
   it 'creates a launchfile' do
     launcher = Launch::Launcher.new
     launcher.create_launchfile
@@ -26,7 +22,7 @@ describe Launch do
     l = Launch::Launcher.new
     l.create_launchfile
 
-    launcher = eval_launchfile
+    launcher = read_launchfile
     expect(launcher).to_not be nil
   end
 
@@ -34,7 +30,7 @@ describe Launch do
     l = Launch::Launcher.new
     l.create_launchfile
 
-    launcher = eval_launchfile
+    launcher = read_launchfile
     expect(launcher.name).to eq("PROJECT_NAME")
   end
 

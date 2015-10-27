@@ -24,7 +24,7 @@ module Launch
       File.open('Launchfile', 'a') do |out|
         # out << File.read('LaunchfileTemplate')
         out << "Launch::Launcher.new do |l|\n"
-        out << "l.name = \"PROJECT_NAME\"\n"
+        out << "  l.name = \"PROJECT_NAME\"\n"
         out << "end\n"
       end
     end
@@ -46,13 +46,15 @@ module Launch
   end
 end
 
-# puts "Evaling launchfile"
-# launch = eval(File.read('Launchfile'))
-# launch.replace!
-#
-#
-def eval_launchfile
-  launch = eval(File.read('Launchfile'))
+# Parses the Launchfile into a Launcher object
+def read_launchfile
+  eval(File.read('Launchfile'))
+end
+
+# Parses the Launchfile and replaces the working directory
+def eval_launcfile
+  launcher = read_launchfile
+  launcher.replace!
 end
 
 #create_launchfile

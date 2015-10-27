@@ -19,7 +19,6 @@ describe Launch do
   end
 
   it 'doesnt create a launchfile if create isnt called' do
-    launcher = Launch::Launcher.new
     expect(File.exists?("Launchfile")).to eq(false)
   end
 
@@ -38,6 +37,5 @@ describe Launch do
     launcher = eval_launchfile
     expect(launcher.name).to eq("PROJECT_NAME")
   end
-
 
 end

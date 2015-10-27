@@ -2,20 +2,15 @@ require 'find'
 require 'optparse'
 #require "launch/version"
 
-options = {}
-OptionParser.new do |opt|
-  opt.banner = "Usage: launch.rb [options]"
+# options = {}
+# OptionParser.new do |opt|
+#   opt.banner = "Usage: launch.rb [options]"
 
-  opt.on('init', "Create a Launchfile") { |o|
-    options[:init] = o
-  }
-end.parse!
+#   opt.on('init', "Create a Launchfile") { |o|
+#     options[:init] = o
+#   }
+# end.parse!
 
-def create_launchfile
-  File.open('Launchfile', 'w') do |out|
-    out << File.read('LaunchfileTemplate')
-  end
-end
 
 module Launch
   class Launcher
@@ -25,6 +20,14 @@ module Launch
       yield(self) if block_given?
     end
 
+    def create_launchfile
+      File.open('Launchfile', 'a') do |out|
+        # out << File.read('LaunchfileTemplate')
+        out << "Launch::Launcher.new do |l|\n"
+        out << "l.name = \"PROJECT_NAME\"\n"
+        out << "end\n"
+      end
+    end
 
     def replace!
       Find.find("#{__dir__}").each do |filename|
@@ -38,6 +41,8 @@ module Launch
       end
 
     end
+
+
   end
 end
 
@@ -45,5 +50,9 @@ end
 # launch = eval(File.read('Launchfile'))
 # launch.replace!
 #
+#
+def eval_launchfile
+  launch = eval(File.read('Launchfile'))
+end
 
 #create_launchfile

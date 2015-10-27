@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Elias Bagley"]
   spec.email         = ["elias@rocketmade.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{Launch is a tool to quickly bootstrap projects from an existing template repo}
+  spec.description   = %q{Launch is a tool which checkouts a template repo, and runs a set of regular expressinos to replace template keys with values.}
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 

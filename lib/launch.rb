@@ -1,5 +1,6 @@
 require 'find'
 require 'optparse'
+require 'git'
 #require "launch/version"
 
 # options = {}
@@ -55,6 +56,10 @@ end
 def eval_launcfile
   launcher = read_launchfile
   launcher.replace!
+end
+
+#TODO
+def clone_repo
 end
 
 #create_launchfile

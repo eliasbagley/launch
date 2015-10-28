@@ -34,4 +34,8 @@ describe Launch do
     expect(launcher.name).to eq("PROJECT_NAME")
   end
 
+  # it 'clones a remote repository' do
+  #   pending
+  # end
+
 end

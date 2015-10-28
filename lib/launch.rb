@@ -15,17 +15,18 @@ require 'git'
 
 module Launch
   class Launcher
-    attr_accessor :name, :pattern, :replacement
+    attr_accessor :name, :pattern, :replacement, :template_uri
 
     def initialize
       yield(self) if block_given?
     end
 
+    # Parse the Launchfile into a Launcher object
     def create_launchfile
       File.open('Launchfile', 'a') do |out|
-        # out << File.read('LaunchfileTemplate')
         out << "Launch::Launcher.new do |l|\n"
         out << "  l.name = \"PROJECT_NAME\"\n"
+        out << "  l.template_uri = \"git@github.com:defunkt/fakefs.git\"\n"
         out << "end\n"
       end
     end
@@ -43,6 +44,9 @@ module Launch
 
     end
 
+    def clone_repo!
+      Git.clone(self.uri, self.name)
+    end
 
   end
 end
@@ -52,14 +56,9 @@ def read_launchfile
   eval(File.read('Launchfile'))
 end
 
-# Parses the Launchfile and replaces the working directory
+# Parses the Launchfile, clones the repo, and replaces the working directory
 def eval_launcfile
   launcher = read_launchfile
+  launcher.clone_repo!
   launcher.replace!
 end
-
-#TODO
-def clone_repo
-end
-
-#create_launchfile

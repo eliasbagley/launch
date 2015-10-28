@@ -31,11 +31,14 @@ describe Launch do
     l.create_launchfile
 
     launcher = read_launchfile
+    # TODO DRY this up
     expect(launcher.name).to eq("PROJECT_NAME")
+    expect(launcher.template_uri).to eq("git@github.com:defunkt/fakefs.git")
   end
 
   # it 'clones a remote repository' do
-  #   pending
+  #   # clone_repo
+  #   expect(File.exists?("/tmp/checkout/myrepo")).to eq(true)
   # end
 
 end
